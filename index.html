@@ -1,24 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Landing Page</title>
-    <link rel="stylesheet" href=" Getting Started/style.css">
-  </head>
-  <body>
-    <header>
-      header
-    </header>
-    
-    <section class="features">
-      features
-    </section>
 
-    <section class="quote">
-      quote
-    </section>
-    <footer>
-      footer
-    </footer>
+<head>
+  <title>My Landing Page</title>
+  <link rel="stylesheet" href="Getting Started/style.css" />
+  <style>
+    @import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,800,300);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica, sans-serif;
+    line-height: 1.45;
+}
+header {
+  color: #FFFFFF;
+  background-color: #284b63;
+  padding: 80px 0;
+  text-align: center;
+}
+section {
+  padding: 40px 0;
+  text-align: center;
+}
+.features {
+  background: #FFFFFF;
+  color: #000000;
+}
+.quote {
+  background:#549DA0;
+  color:#FFFFFF;
+}
+footer {
+  background: #353535;
+  padding: 32px 0;
+  text-align: center;
+  color: #868686;
+} 
+/*
+Since we provided only two values for the padding, it will set both the top and bottom padding to the provided value. (padding: 40px 0; is the same as padding: 40px 0 40px 0;)
+*/
+  </style>
+</head>
+
+<body>
+  <header>
+    header
+  </header>
+
+  <section class="features">
+    features
+  </section>
+
+  <section class="quote">
+    quote
+  </section>
+  <footer>
+    footer
+  </footer>
 
 </body>
-</html> 
+
+</html>
