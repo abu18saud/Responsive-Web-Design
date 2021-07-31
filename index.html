@@ -10,6 +10,39 @@
   <style>
     @import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,800,300);
 
+
+    /* يتم تطبيق هذا النمط عندما يكون عرض الشاشة أكبر من ٦٠٠ بكسل */
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: blue;
+      }
+    }
+
+    /*اقرأ أكثر عن media*/
+    /*https://www.w3schools.com/cssref/css3_pr_mediaquery.asp*/
+    /*You can also define multiple conditions, for example a max and min width of the viewport:*/
+    /*يمكنك أيضًا تحديد شروط متعددة ، على سبيل المثال الحد الأقصى والحد الأدنى لعرض إطار العرض:*/
+    @media screen and (min-width: 800px) and (max-width: 1024px) {
+      body {
+        background-color: blue;
+      }
+    }
+
+    /* What will be the color of a paragraph of text on a 800px screen using the following styles? */
+    /* ماذا سيكون لون فقرة من النص على شاشة 800 بكسل باستخدام الأنماط التالية؟ */
+    p {
+      color: red;
+    }
+
+    @media screen and (max-width: 1024px) {
+      p {
+        color: blue;
+        /* هذه هي الإجابة الصحيحة */
+      }
+    }
+
+
+
     body {
       margin: 0;
       padding: 0;
@@ -178,6 +211,45 @@ You have 2 div elements on your page. You need to position them so that the firs
 
     footer li a:hover {
       color: white;
+    }
+
+    /* 480px is the typical breakpoint for mobile devices.
+    480 بكسل هي نقطة التوقف النموذجية للأجهزة المحمولة.
+    */
+    @media screen and (max-width: 480px) {
+      .btn {
+        display: block;
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 0 0 8px 0;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 25px 0 15px 0;
+      }
+
+      .feature {
+        width: 100%;
+        text-align: left;
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .feature img {
+        width: 15%;
+        min-width: 60px;
+        margin-right: 20px;
+      }
     }
 
     /*
