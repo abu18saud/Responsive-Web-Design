@@ -6,42 +6,12 @@
   <!--You can also use custom values for the viewport tag, however in most cases it is recommended you use the defaults by applying the device-width value.-->
   <!--يمكنك أيضًا استخدام قيم مخصصة لعلامة منفذ العرض ، ولكن يوصى في معظم الحالات باستخدام القيم الافتراضية من خلال تطبيق قيمة عرض الجهاز.-->
   <title>My Landing Page</title>
-  <link rel="stylesheet" href="Getting Started/style.css" />
   <style>
     @import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,800,300);
 
-
-    /* يتم تطبيق هذا النمط عندما يكون عرض الشاشة أكبر من ٦٠٠ بكسل */
-    @media screen and (max-width: 600px) {
-      body {
-        background-color: blue;
-      }
+    html {
+      font-size: 16px;
     }
-
-    /*اقرأ أكثر عن media*/
-    /*https://www.w3schools.com/cssref/css3_pr_mediaquery.asp*/
-    /*You can also define multiple conditions, for example a max and min width of the viewport:*/
-    /*يمكنك أيضًا تحديد شروط متعددة ، على سبيل المثال الحد الأقصى والحد الأدنى لعرض إطار العرض:*/
-    @media screen and (min-width: 800px) and (max-width: 1024px) {
-      body {
-        background-color: blue;
-      }
-    }
-
-    /* What will be the color of a paragraph of text on a 800px screen using the following styles? */
-    /* ماذا سيكون لون فقرة من النص على شاشة 800 بكسل باستخدام الأنماط التالية؟ */
-    p {
-      color: red;
-    }
-
-    @media screen and (max-width: 1024px) {
-      p {
-        color: blue;
-        /* هذه هي الإجابة الصحيحة */
-      }
-    }
-
-
 
     body {
       margin: 0;
@@ -58,23 +28,14 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 3rem;
       margin: 0 0 16px 0;
     }
 
-    /*
-Recall how the margin values work: the first value is the top margin, the second value is the right margin, third is the bottom margin and the last one defines the left margin. This means the values go in the clockwise direction, starting from the top.
-تذكر كيفية عمل قيم الهامش: القيمة الأولى هي الهامش العلوي ، والقيمة الثانية هي الهامش الأيمن ، والثالثة هي الهامش السفلي والأخيرة تحدد الهامش الأيسر. هذا يعني أن القيم تسير في اتجاه عقارب الساعة ، بدءًا من الأعلى.
-*/
     h2 {
       font-weight: 300;
-      font-size: 24px;
+      font-size: 1.5rem;
       margin: 0 0 16px 0;
-    }
-
-    section {
-      padding: 40px 0;
-      text-align: center;
     }
 
     .container {
@@ -87,7 +48,7 @@ Recall how the margin values work: the first value is the top margin, the second
       display: inline-block;
       color: white;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 1.25rem;
       background: #549DA0;
       border: none;
       border-radius: 5px;
@@ -99,21 +60,9 @@ Recall how the margin values work: the first value is the top margin, the second
       background: #468486;
     }
 
-    /*
-    Fill in the blanks to define a style for the element. When the mouse cursor travels over the button, it should change its text color to white.
-املأ الفراغات لتحديد نمط للعنصر. عندما ينتقل مؤشر الماوس فوق الزر ، يجب أن يغير لون نصه إلى الأبيض.
-    */
-    .item:hover {
-      color: white;
-    }
-
-    /*
-Fill in the blanks to define a style that rounds the corners of the element with 5px radius and sets a 1px black border.
-املأ الفراغات لتحديد نمط يدور حول زوايا العنصر بنصف قطر 5 بكسل ويضع حدًا أسود 1 بكسل.
-*/
-    .my-item {
-      border-radius: 5px;
-      border: 1px solid black;
+    section {
+      text-align: center;
+      padding: 40px 0;
     }
 
     .features {
@@ -124,28 +73,12 @@ Fill in the blanks to define a style that rounds the corners of the element with
     .feature {
       width: 32%;
       display: inline-block;
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     .feature img {
       width: 40%;
     }
-
-    /*
-You have 2 div elements on your page. You need to position them so that the first div occupies 70% of the page and while the second div takes the remaining 30%.
-لديك عنصرا div على صفحتك. تحتاج إلى وضعهم بحيث يشغل div الأول 70٪ من الصفحة بينما يأخذ div الثاني نسبة الـ 30٪ المتبقية.
-*/
-    .first {
-      width: 70%;
-      display: inline-block;
-    }
-
-    .second {
-      width: 30%;
-      display: inline-block;
-
-    }
-
 
     .quote {
       background: #549DA0;
@@ -160,11 +93,11 @@ You have 2 div elements on your page. You need to position them so that the firs
 
     blockquote p {
       margin: 0 0 5px 0;
-      font-size: 24px;
+      font-size: 1.5rem;
     }
 
     blockquote cite {
-      font-size: 16px;
+      font-size: 1rem;
       font-style: italic;
     }
 
@@ -178,6 +111,7 @@ You have 2 div elements on your page. You need to position them so that the firs
       padding: 32px 0;
       text-align: center;
       color: #868686;
+      font-size: 0.75rem;
     }
 
     footer ul {
@@ -186,25 +120,13 @@ You have 2 div elements on your page. You need to position them so that the firs
       list-style: none;
     }
 
-    /*
-    Fill in the blanks to align the list items to the left, position them below each other, and remove the bullet point.
-املأ الفراغات لمحاذاة عناصر القائمة إلى اليسار ، وضعها أسفل بعضها البعض ، وقم بإزالة النقطة النقطية.
-    */
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      text-align: left;
-    }
-
-
     footer li {
       display: inline-block;
     }
 
     footer li a {
       padding: 6px;
-      font-size: 14px;
+      font-size: 0.875rem;
       text-decoration: none;
       color: #c3c3c3;
     }
@@ -213,22 +135,19 @@ You have 2 div elements on your page. You need to position them so that the firs
       color: white;
     }
 
-    /* 480px is the typical breakpoint for mobile devices.
-    480 بكسل هي نقطة التوقف النموذجية للأجهزة المحمولة.
-    */
     @media screen and (max-width: 480px) {
       .btn {
         display: block;
-        font-size: 18px;
+        font-size: 1.125rem;
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 2rem;
         margin: 0 0 8px 0;
       }
 
       h2 {
-        font-size: 18px;
+        font-size: 1.125rem;
       }
 
       section {
@@ -239,7 +158,7 @@ You have 2 div elements on your page. You need to position them so that the firs
         width: 100%;
         text-align: left;
         margin: 0 0 10px 0;
-        font-size: 16px;
+        font-size: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -250,37 +169,31 @@ You have 2 div elements on your page. You need to position them so that the firs
         min-width: 60px;
         margin-right: 20px;
       }
-    }
 
-    /*
-Since we provided only two values for the padding, it will set both the top and bottom padding to the provided value. (padding: 40px 0; is the same as padding: 40px 0 40px 0;)
-*/
-    /* أسئلة الاختبار
-Your HTML page has 2 div elements with the ids "left" and "right". Define the correct CSS styles to make the "left" div take 60% of the page, and the "right" div 40% of the page.
-تحتوي صفحة HTML الخاصة بك على عنصري div مع المعرفين "يسار" و "يمين". حدد أنماط CSS الصحيحة لجعل div "الأيسر" يأخذ 60٪ من الصفحة ، و div "الأيمن" 40٪ من الصفحة.
-*/
-    #left {
-      display: inline-block;
-      width: 60%;
-    }
+      .quote {
+        padding: 30px 0;
+      }
 
-    #right {
-      display: inline-block;
-      width: 40%;
-    }
+      blockquote p {
+        font-size: 1.125rem;
+      }
 
-    /*
-    Your HTML includes 3 div elements with some content.
-Define the correct style to make the divs arrange horizontally next to each other, instead of being on separate lines.
-Also, define a 1px wide green border for the divs.
-يتضمن HTML الخاص بك 3 عناصر div مع بعض المحتوى. حدد النمط الصحيح لجعل divs يرتبان أفقيًا بجانب بعضهما البعض ، بدلاً من أن يكونا في أسطر منفصلة. أيضًا ، حدد حدًا أخضر بعرض 1 بكسل لـ divs.
-    */
+      blockquote cite {
+        font-size: 0.875rem;
+      }
 
-    .div {
-      display: inline-block;
-      border: 1px solid;
+      footer {
+        padding: 30px 0 10px 0;
+      }
+
+      footer li {
+        display: block;
+        margin: 5px 0;
+      }
     }
   </style>
+
+
 </head>
 
 <body>
@@ -323,14 +236,17 @@ Also, define a 1px wide green border for the divs.
   </section>
 
   <footer>
-    <div class="container">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contacts</a></li>
-      </ul>
-      <p>&copy; All rights reserved.</p>
-    </div>
+    <center>
+      <div class="container">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+        <p>&copy; All rights reserved.</p>
+      </div>
+    </center>
+
   </footer>
 
 </body>
