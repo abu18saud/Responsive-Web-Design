@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Global Saffas Services
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    body {
+        background-color: gray;
+        padding: 10px 10px;
+    }
+
+    header {
+        background-color: #7CFC00;
+        height: 140px;
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .cover {
+        text-align: center;
+        color: #fff;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header li {
+        float: left;
+        border-style: 1px solid #00BFFF;
+    }
+
+    header li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 5px 6px;
+        text-decoration: none;
+    }
+
+    header li a:hover:not(.active) {
+        background-color: #808080;
+    }
+
+    .goright {
+        float: right;
+    }
+
+    section {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    #round {
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        background-color: #00BFFF;
+        border-radius: 20px 20px 0 0;
+    }
+
+    footer {
+        width: 100%;
+        background: #7CFC00;
+        color: #fff;
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+        border-bottom-color: #00BFFF;
+    }
+
+    footer li {
+        display: inline-block;
+    }
+
+    footer li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 5px 6px;
+        text-decoration: none;
+    }
+
+    footer li a:hover:not(.active) {
+        background-color: #808080;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 0 20px 0 20px;
+        max-width: 900px;
+    }
+
+    .features {
+        background-color: #fff;
+        color: #00BFFF;
+    }
+
+    .feature {
+        width: 32%;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .feature img {
+        width: 50%;
+    }
+
+    .quote {
+        background-color: #549DA0;
+        color: #fff;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 0 0 0 10px;
+        text-align: left;
+        border-left: 2px solid #fff;
+    }
+
+    blockquote p {
+        margin: 0 0 5px 0;
+        font-size: 24px;
+    }
+
+    blockquote cite {
+        font-size: 16px;
+        font-style: italic;
+    }
+
+    blockquote cite:before {
+        content: '-';
+        margin-right: 5px;
+    }
+
+    @media screen and (max-width: 480px) {
+        header {
+            background-color: #7CFC00;
+            height: 140px;
+            width: 100%;
+            font-size: 14px;
+            border-radius: 20px 20px 20px 20px;
+            border-top-style: solid;
+            border-top-width: 3px;
+            border-top-color: #00BFFF;
+        }
+
+        header li a {
+            display: flex;
+            color: white;
+            text-align: center;
+            padding: 4px 6px;
+            text-decoration: none;
+            border-right: 1px solid #00BFFF;
+            border-bottom: 1px solid #00BFFF;
+        }
+
+        header li a:hover:not(.active) {
+            background-color: #808080;
+        }
+
+        .goright {
+            float: left;
+        }
+
+        .feature {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center-left;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .feature img {
+            width: 20%;
+            min-width: 60px;
+            margin-right: 20px;
+        }
+
+        .quote {
+            padding: 30px 0;
+        }
+
+        blockquote p {
+            font-size: 18px;
+        }
+
+        blockquote cite {
+            font-size: 14px;
+        }
+
+        footer {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Scholarships</a></li>
+                <li><a href="#">Internships</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li class="goright"><a href="#">Log in</a></li>
+                <li class="goright"><a href="#">Sign up</a></li>
+            </ul>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <p class="cover"><b>Global Saffas Services</b></p>
+    </header>
+    <div class="logo">
+        <br />
+        <img src="https://i.postimg.cc/V6q9kGPp/gss.png" height="75px" width="150px" />
+        <br />
+        <br />
+    </div>
+    <div id="round">
+        <div class="container">
+            <br />
+            <br />
+            <!--
+                اقرأ المزيد حول marquee
+                https://www.w3schools.in/html-tutorial/marquee-tag/
+            -->
+            <marquee>You're highly welcome to <b>Global Saffas Services</b> a website with a lot of opportunities.
+            </marquee>
+            <br />
+            <br />
+            <b>What are you looking for?</b>
+            <br />
+            <br />
+            <select id="box" name="choice">
+                <option value="choose">Please select one</option>
+                <option value="Jobs">Jobs</option>
+                <option value="Scholarships">Scholarships</option>
+                <option value="Internships">Internships</option>
+            </select>
+            <br />
+            <br />
+            <input id="submit" type="submit" value="submit" />
+            <br />
+            <br />
+        </div>
+    </div>
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <img src="https://i.postimg.cc/ydjJGwH1/jobs.jpg" />
+                <p>Search for suitable jobs</p>
+            </div>
+            <div class="feature">
+                <img src="https://i.postimg.cc/sx12Nxmm/scholarships.jpg" />
+                <p>Search for suitable scholarships</p>
+            </div>
+            <div class="feature">
+                <img src="https://i.postimg.cc/rw9KsBDS/internships.jpg" />
+                <p>Search for suitable internships</p>
+            </div>
+        </div>
+    </section>
+    <section class="quote">
+        <div class="container">
+            <blockquote>
+                <p> I belive that helping others is the best way to obtain dignity and people's love. </p>
+                <cite> Dr. Saffas </cite>
+            </blockquote>
+            <br />
+            <blockquote>
+                <p> No one has ever become poor by giving. </p>
+                <cite> Anna Frank </cite>
+            </blockquote>
+            <br />
+            <blockquote>
+                <p> Give, but give until it hurts. </p>
+                <cite> Mother Teresa </cite>
+            </blockquote>
+        </div>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            </br>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <p>&copy: 2021 Global Saffas Services</p>
+    </footer>
+</body>
+<script>
+    //alert("You're highly welcome to Global Saffas Services a website with a lot of opportunities.")
+</script>
+
+</html>

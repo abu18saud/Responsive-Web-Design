@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQ my blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        :root {
+            --dkblue: #228aa0;
+        }
+
+        body {
+            font-family: 'Handlee', cursive;
+            font-size: 13pt;
+            background-color: #234;
+            padding: 10px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            background-color: tomato;
+            text-align: center;
+            z-index: 2;
+            margin-bottom: -10px;
+        }
+
+        #item {
+            display: none;
+        }
+
+        header {
+            background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+            background-size: cover;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        header img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+        }
+
+        header p {
+            font-size: 25pt;
+            color: #3b464c;
+            padding-top: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .img-circle {
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        #cnt {
+            color: red;
+        }
+
+        #folow {
+            color: gold;
+        }
+
+        h1 {
+            font-size: 15pt;
+            color: var(--dkblue);
+            text-align: center;
+            padding: 15px 0 10px 0;
+            margin: 0 0 10px 0;
+            border: 4px dashed var(--dkblue);
+            background: #20bca3;
+        }
+
+        h1 span {
+            color: #3b668c;
+        }
+
+        p {
+            padding: 0;
+        }
+
+        section {
+            background-color: #9ACD32;
+            /* зеленый*/
+            padding: 40px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        blockquote {
+            font-size: 12pt;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        #table1 {
+            display: grid;
+            grid-template-columns:
+                repeat(6, 1fr);
+            grid-gap: 2px;
+            background-color: #cad;
+            color: white;
+            padding: 3px;
+        }
+
+        #cert {
+            overflow-x: scroll;
+            border: 2px inset #456;
+            background-color: #234;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .cell {
+            height: auto;
+            width: auto;
+            background-color: #A3e;
+            font-size: .8em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h {
+            background-color: #AE2F3E;
+            font-size: .9em;
+            text-align: center;
+        }
+
+        .l {
+            background-color: #A3a;
+            text-align: center;
+        }
+
+        .act {
+            background-color: coral;
+        }
+
+        li {
+            margin-bottom: 0px;
+            font-weight: bold;
+        }
+
+        progress {
+            position: relative;
+            top: -15px;
+            width: 70%;
+            height: 7px;
+            color: #3fb6b2;
+            background: #efefef;
+            border-radius: 5px;
+        }
+
+        progress::-webkit-progress-bar {
+            background: lightred;
+            border-radius: 5px;
+        }
+
+        progress::-webkit-progress-value {
+            background: #3fb6b2;
+            border-radius: 5px;
+        }
+
+        progress::-moz-progress-bar {
+            color: #3fb6b2;
+            background: #efefef;
+        }
+
+        button {
+            padding: 0;
+            background-color: lightgrey;
+        }
+
+        iframe {
+            display: block;
+            border: 3px solid #3fb6b2;
+            margin: auto;
+        }
+
+        iframe:hover {
+            transform-origin: 50% 80px;
+            transform: rotate(90deg);
+            height: calc(100vw - 6px);
+            width: calc(100vh - 6px);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #f36f48;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .face {
+            transform: scale(0.4);
+            display: block;
+            margin: -15px auto;
+        }
+
+        input,
+        textarea {
+            font-size: 11pt;
+            margin-bottom: 10px;
+            padding: 12px 5px;
+            border: 1px solid #cecece;
+            border-radius: 5px;
+            background-color: #efefef;
+            color: #787575;
+            outline: none;
+            width: 95%;
+        }
+
+        #submit {
+            background-color: #3db6a2;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #submit:hover {
+            background-color: #43a09d;
+        }
+
+        #follow {
+            text-align: center;
+        }
+
+        #follow img {
+            height: 50px;
+            width: 50px;
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        #follow a {
+            text-decoration: none;
+        }
+
+        #follow img:hover {
+            opacity: 0.8;
+        }
+
+        .copyright {
+            font-size: 8pt;
+            text-align: right;
+            padding-bottom: 10px;
+            color: grey;
+        }
+
+        @media screen and (max-width: 480px) {
+            nav {
+                display: inline-block;
+                width: calc(100% - 10px);
+                padding: 5px;
+                background: rgba(0, 0, 0, 0);
+                position: sticky;
+                top: 0;
+            }
+
+            #item {
+                display: block;
+                color: white;
+                float: right;
+                --d: none;
+            }
+
+            #item:hover {
+                --d: block;
+            }
+
+            #menu {
+                width: 25%;
+                display: var(--d);
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: rgba(0, 0, 0, 0);
+                backdrop-filter: blur(5px);
+                border:
+                    1px solid rgba(255, 255, 255, .1);
+                text-align: center;
+                padding: 40px 5px 5px;
+            }
+
+            #menu a {
+                display: var(--d);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="item">&#9776;
+            <div id="menu">
+                <a href="#aboutMe">About Me</a> |
+                <a href="#schedule">Schedule</a>
+                | <a href="#skills">Skills</a> |
+                <a href="#codes">Codes</a> |
+                <a href="#media">Media</a> |
+                <a href="#contact">Contact</a> |
+                <a href="#follow">Follow Me</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <img alt="" class="img-circle" src="https://api.sololearn.com/Uploads/Avatars/6844089.jpg">
+        <p>
+            Василий
+            <small id="cnt"></small><br />
+            <small id="folow">
+                <small id="flr"></small>
+                followers<br />
+                🏋️<small id="xp"></small> xp
+            </small>
+        </p>
+    </header>
+    <section id="aboutMe">
+        <h1><span>About Me</span></h1>
+        <p>
+            Hey! I'm <b id="user"></b>. Study of programming has changed my world. It's not just about apps. Programming
+            gave me <i>problem-solving skills</i> and a way to communicate with others on a technical level. I can also
+            develop websites and use my coding skills to get a better job. And I learned it all at
+            <strong>SoloLearn</strong> where they build your self-esteem and keep you motivated. Join me in this
+            rewarding journey. You'll have fun, get help, and learn along the way!
+        </p>
+        <blockquote>
+            "Declare variables, not war".
+        </blockquote>
+    </section>
+
+    <!-- My Schedule section start -->
+    <section id="schedule">
+        <h1>My Programming Learning
+            <span>Schedule</span>
+        </h1>
+        <div id="table1">
+            <div class="h cell">Day Time
+            </div>
+            <div class="h cell">Mon</div>
+            <div class="h cell">Tue</div>
+            <div class="h cell">Wed</div>
+            <div class="h cell">Thu</div>
+            <div class="h cell">Fri</div>
+            <div class="l cell">8:00 - 8:30
+            </div>
+            <div class="act cell">Learn
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="l cell">
+                9:00 - 10:00
+            </div>
+            <div class="cell">—</div>
+            <div class="act cell">Practic
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="l cell">
+                13:00 - 13:30
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="act cell">Play
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="l cell">
+                15:45 - 17:00
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="act cell">Code
+            </div>
+            <div class="cell">—</div>
+            <div class="l cell">
+                18:00 - 19:15
+            </div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="cell">—</div>
+            <div class="act cell">Discuss
+            </div>
+        </div>
+    </section>
+    <!-- My Schedule section end -->
+
+    <section id="skills">
+        <h1>My <span>Skills</span></h1>
+        <div id="cert"></div><br />
+        <h2>Badges</h2>
+        <div id="badges" align="center">
+        </div><br />
+        <h2>Progress</h2>
+        <ol style="margin-top:1em;"></ol>
+    </section>
+
+    <section id="codes">
+        <h1>My <span>Codes</span></h1>
+        <table id="idTable">
+            <tr>
+                <td><b>Lang</b></td>
+                <td><b>Name</b>
+                    <button onclick="fncDown()">⬇️
+                    </button>
+                    <button onclick="fncUp()">⬆️
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h1>My <span>Media</span></h1>
+        <iframe allowfullscreen src="https://www.youtube.com/embed/Q6_5InVJZ88" frameborder="0"></iframe>
+    </section>
+
+    <!-- Form section start -->
+    <section id="contact">
+        <h1><span>Contact</span> Me</h1>
+        <svg class="face" height="100" width="100">
+            <circle cx="50" cy="50" r="50" fill="#FDD835" />
+            <circle cx="30" cy="37" r="10" fill="#FFFFFF" />
+            <circle cx="70" cy="37" r="10" fill="#FFFFFF" />
+            <circle cx="30" cy="37" r="5" fill="#000000" />
+            <circle cx="70" cy="37" r="5" fill="#000000" />
+            <path d="M 30 70 q 20 20 40 0" stroke="#FFFFFF" stroke-width="5" fill="none" />
+        </svg>
+        <form>
+            <input name="name" type="text" placeholder="Name✒️" required /><br />
+            <input name="email" type="email" placeholder="Email✒️" required /><br />
+            <textarea name="message" required placeholder="Message✒️"></textarea>
+            <input type="submit" id="submit" value="SEND-ОТПРАВИТЬ" />
+        </form>
+        <?php
+$myfile = fopen("names.txt", "w");
+
+$txt = "John\n";
+fwrite($myfile, $txt);
+$txt = "David\n";
+fwrite($myfile, $txt);
+
+fclose($myfile);
+
+/* File contains:
+John
+David
+*/
+?>
+    </section>
+    <!-- Form section end -->
+
+    <section id="follow">
+        <h1><span>Follow</span> Me</h1>
+        <div>
+            <a href="https://www.sololearn.com/Profile/6844089/?ref=app" target="_blank">
+                <img alt="SoloLearn" src="https://www.sololearn.com/Uploads/icons/sololearn.png" />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png" />
+            </a>
+            <a href="https://www.twitter.com/" target="_blank">
+                <img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png" />
+            </a>
+        </div>
+    </section>
+    <div class="copyright">
+        &copy; 2017 My Blog. All rights reserved.
+    </div>
+</body>
+<script>
+    /*Моя активность: 
+    Вт 4, Чт 4, 
+    Пн 3, 
+    Ср 2, Пт 2, Сб 2, Вс 2.
+*/
+    // Вывод текущего времени в тело 
+    /*function printTime() {
+        var d = new Date();
+        var hours = d.getHours();
+        var mins = d.getMinutes();
+        var secs = d.getSeconds();
+        document.body.innerHTML = hours+":"+mins+":"+secs;
+    }
+    setInterval(printTime, 1000);*/
+    (async function data() {
+        let api = await fetch(
+            "https://api2.sololearn.com/" +
+            "v2/userinfo/v3/profile/6844089"
+        );
+        let data = await api.json();
+        cnt.innerHTML =
+            data.userDetails.countryCode;
+        flr.innerHTML +=
+            data.userDetails.followers;
+        user.innerHTML =
+            data.userDetails.name;
+        xp.innerHTML =
+            data.userDetails.xp;
+        /*
+        lvl.innerHTML += 
+        data.userDetails.level;
+        
+        bio.innerHTML =
+        data.userDetails.bio;
+      
+        flg.innerHTML +=
+        data.userDetails.following;
+        */
+        let count = 0;
+        for (i in (data.certificates)) {
+            count++;
+            let
+                icon = data.certificates[i]
+                    .iconURL,
+                name = data.certificates[i].name,
+                color = data.certificates[i]
+                    .courseColor,
+                startDate = new
+                    Date(data.certificates[i]
+                        .startDate).toDateString(),
+                image =
+                    `<figure style="margin:5px; padding:20px; background:${color} url(https://www.sololearn.com/Certificate/1162-6844089/pdf/); color:gold; font-weight:900; text-shadow: .7px .7px goldenrod">
+       <figcaption>
+         CERTIFICATE
+       </figcaption>
+       <img src="${icon}" style= "width:4em; height:4em; margin:5px; border-radius:50%;">
+       <figcaption>
+         ${name}<br>
+         ${startDate}
+       </figcaption>
+     </figure>`;
+            $('#cert').append(image);
+        }
+        $('#cert').before
+            (`<h2>${count} Certificates</h2>`);
+        for (i in (data.coursesProgress)) {
+            let
+                icon = data.coursesProgress[i].
+                    courseIconURL,
+                name = data.coursesProgress[i].
+                    courseName,
+                prg = data.coursesProgress[i].
+                    progress,
+                file = '';
+            switch (name) {
+                case 'Angular + NestJS':
+                    file = 'fullstack'; break;
+                case 'Python Core':
+                    file = 'Python'; break;
+                default:
+                    arr = name.split(' ');
+                    for (i of arr) {
+                        file = arr.length > 1
+                            ? arr[0] + '-' + i : name;
+
+                    }
+            }
+            let image =
+                `<li>
+      <a href= "https://www.sololearn.com/Course/${file}/?ref=app">
+        <img src="${icon}"
+        style="width:2em; height:2em; border-radius:50%; float:left;">
+        <b>${name}</b><br>
+        <progress value="${prg}" 
+                  min="0" max="1">
+      </a>
+     </li><br>`;
+            if (prg < 1) $('ol').append(image);
+        }
+        for (i in (data.userBadges.badges)) {
+            let
+                icon = data.userBadges.badges[i]
+                    .iconURL,
+                color = data.userBadges.badges[i]
+                    .color,
+                image =
+                    `<img src="${icon}" style= "margin:5px; width:3.5em; height:3.5em; border-radius:50%; background: ${color};">`;
+            $('#badges').append(image);
+        }
+        for (i in (data.userCodes)) {
+            let
+                name = data.userCodes[i].name,
+                id = data.userCodes[i].publicId,
+                lang = data.userCodes[i].language,
+                code =
+                    `<tr>
+      <td><b>${lang}</b></td>
+      <td><a href= "https://code.sololearn.com/${id}/?ref=app">
+        <b>${name}</b>
+      </a></td>
+     </tr>`;
+            $('table').append(code);
+        }
+    })()
+    class Sort {
+        constructor(a, b) {
+            this.a = a;
+            this.b = b;
+        }
+        get SortRow() {
+            let sortedRows =
+                Array.from(idTable.rows).
+                    slice(1).sort(
+                        (rowA, rowB) =>
+                            rowA.cells[0].innerHTML >
+                                rowB.cells[0].innerHTML
+                                ? this.a : this.b
+                    );
+            return idTable.tBodies[0].
+                append(...sortedRows);
+        }
+    }
+    function fncDown() {
+        const Down = new Sort(1, -1);
+        Down.SortRow
+    }
+    function fncUp() {
+        const Up = new Sort(-1, 1);
+        Up.SortRow
+    }
+</script>
+
+</html>

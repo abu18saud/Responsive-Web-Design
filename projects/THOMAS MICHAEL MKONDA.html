@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="outhor" content="thomas">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        header {
+            background-color: gray;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0 0 16px 0;
+        }
+
+        h2 {
+
+            font-weight: 300;
+            font-size: 24px;
+            margin: 0 0 16px 0;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 20px 0 20px;
+            max-width: 900px;
+        }
+
+        .btn {
+            display: inline-block;
+            color: white;
+            background-color: black;
+            font-weight: 500;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+
+        section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .features {
+            color: white;
+            background-color: gray;
+        }
+
+        .feature {
+            width: 32%;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .feature img {
+            width: 40%;
+        }
+
+        .quote {
+            background-color: gray;
+            color: white;
+        }
+
+        blockquote {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        blockquote p {
+            margin: 0 0 15px 0;
+            font-size: 24px;
+        }
+
+        blockquote cite {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        blockquote cite:before {
+            content: '-';
+            margin-right: 5px;
+        }
+
+        footer {
+            padding: 32px 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        footer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        footer li {
+            display: inline-block;
+        }
+
+        footer li a {
+            padding: 6px;
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+        }
+
+        footer li a:hover {
+            color: yellow;
+        }
+
+        @media screen and (max-width:480px) {
+            h1 {
+                font-size: 24px;
+                margin: 0 0 12px 0;
+                text-shadow: 1px 2px black;
+            }
+
+            h2 {
+                font-size: 14px;
+                margin: 0 0 11px 0;
+                text-transform: 1px 2px black;
+            }
+
+            .btn {
+                display: block;
+                padding: 25px 15px;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 25px 0 15px 0;
+                font-size: 24px;
+                text-shadow: 1px 2px black;
+            }
+
+            .feature {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 10px 0;
+                text-align: left;
+
+            }
+
+            .feature img {
+                width: 32%;
+                min-width: 60px;
+                margin-right: 20px;
+            }
+
+            .qoute {
+                font-size: 24px;
+            }
+
+            .quote p {
+                font-size: 24px;
+                font-weight: bolder;
+                font-family: times;
+            }
+
+            .quote cite {
+                font-size: 18px;
+                font-family: times;
+            }
+
+            body {
+                border-radius: 5px;
+                border: none;
+                gap: 2px;
+                display: grid;
+                font-family: times;
+                background-color: #284b63;
+            }
+
+            body header {
+                border: 2px solid black;
+                border-radius: 6px;
+                text-transform: capitalize;
+            }
+
+            body section {
+                border: 2px solid black;
+                border-radius: 6px;
+            }
+
+            body footer {
+                border: 5px solid black;
+                border-radius: 6px;
+            }
+
+            footer {
+                text-align: center;
+                justfy-content: center;
+                align-items: center;
+                padding: 30px 0;
+            }
+
+            footer ul {
+                list-style: none;
+            }
+
+            footer li {
+                display: block;
+                font-size: 34px;
+
+            }
+
+            footer p {
+                font-size: 10px;
+            }
+
+            .submenue {
+                width: 100%;
+                display: relative;
+            }
+
+            .submenue a {
+                display: block;
+                text-decoration: none;
+                color: white;
+                padding: 25px 15px;
+            }
+
+            div a {
+                text-transform: capitalize;
+            }
+
+            .n1 {
+                margin: 0 0 10px 0;
+                padding: 18px 0 18px 0;
+                text-transform: uppercase;
+                font-weight: bolder;
+                text-shadow: 1px 2px black;
+            }
+
+            .n1 span {
+                border: 4px double black;
+                border-radius: 5px;
+                padding: 15px;
+                margin: 10px;
+                margin-bottom: 10px;
+            }
+
+            .n2 {
+                text-shadow: 1px 2px black;
+            }
+
+            .n3 {
+                color: black;
+            }
+
+            .n4 {
+                color: white;
+            }
+        }
+
+        .submenue {
+            width: 40%;
+            text-align: center;
+            min-width: 160px;
+            transform: translate(50%, 0);
+            position: absolute;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+            background-color: white;
+            font-size: 15px;
+        }
+
+        .submenue a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 12px 16px;
+
+        }
+
+        .submenue a:hover {
+            background-color: white;
+            color: blue;
+        }
+
+        .submenue {
+            display: none;
+        }
+
+        div p {
+            text-transform: capitalize;
+        }
+
+        body p {
+            text-transform: capitalize;
+
+        }
+
+        .n1 {
+            margin: 0 0 10px 0;
+            padding: 18px 0 18px 0;
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-shadow: 1px 2px black;
+        }
+
+        .n1 span {
+            border: 4px double black;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="n1"><span>sololearn</span></h1>
+            <p class="n2">is</p>
+            <h1>awesome app</h1>
+            <h2 class="n3">and it will change your<span class="n4"> life!</span></h2>
+            <a class="btn">downloads</a>
+            <div class="submenue">
+                <a href="#">love</a>
+                <a href="#">hope</a>
+            </div>
+        </div>
+    </header>
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <img src="https://www.sololearn.com/uploads/img_blue_pin.png" alt="" />
+                <p class="n1"><span>pin</span></p>
+            </div>
+            <div class="feature">
+                <img src="https://www.sololearn.com/uploads/img_blue_chart.png" alt="" />
+                <p class="n1"><span>chart</span></p>
+            </div>
+            <div class="feature">
+                <img src="https://www.sololearn.com/uploads/img_blue_msg.png" alt="" />
+                <p class="n1"><span>msg</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="quote">
+        <blockquote class="container">
+            <p>"awesome languages"</p>
+            <cite>endless knowledge</cite>
+        </blockquote>
+    </section>
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contacts</a></li>
+            </ul>
+            <p>&copy all right reserved</p>
+        </div>
+    </footer>
+</body>
+<script>
+    $(function () {
+        $(".btn").click(function () {
+            $(".submenue").slideToggle(500);
+        });
+    });
+</script>
+
+</html>
